@@ -45,7 +45,7 @@ def get_response_to(msg):
 async def newMessageListener(event):
     newMessage = event.message.message
     print("Message: " + str(newMessage))
-    resp = get_response_to(newMessage)
+    resp = get_response_to(newMessage.lower())
     print("Response: " + resp + "\n")
     await client.send_message(channel, resp)
 
